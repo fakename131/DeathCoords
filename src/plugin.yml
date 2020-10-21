@@ -1,0 +1,9 @@
+name: DeathCoords
+version: 1.0.1
+api-version: 1.16
+description:
+author: Fake_Name131
+main: me.Fake_Name131.DeathCoords.Main
+commands:
+  DeathCoords:
+    description: 'Returns the version of the plugin.'
