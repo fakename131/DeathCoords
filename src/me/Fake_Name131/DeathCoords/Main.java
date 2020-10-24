@@ -49,8 +49,8 @@ public class Main extends JavaPlugin implements Listener {
 		String msg = ChatColor.AQUA + p.getName() + ChatColor.GREEN + " has died at X"
 				+ ChatColor.AQUA + x + ChatColor.GREEN + " Y"
 				+ ChatColor.AQUA + y + ChatColor.GREEN + " Z"
-				+ ChatColor.AQUA + z + ChatColor.GREEN + "in "
-				+ ChatColor.AQUA + p.getLocation().getWorld()
+				+ ChatColor.AQUA + z + ChatColor.GREEN + " in "
+				+ ChatColor.AQUA + p.getLocation().getWorld().getName()
 				+ ChatColor.GREEN + ".";
 		if (getConfig().getBoolean("send-all") == true) {
 			Bukkit.broadcastMessage(msg);
