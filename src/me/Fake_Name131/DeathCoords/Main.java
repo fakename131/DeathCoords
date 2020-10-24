@@ -11,7 +11,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import net.md_5.bungee.api.ChatColor;
@@ -40,11 +39,6 @@ public class Main extends JavaPlugin implements Listener {
 		}
 		return false;
 	}
-	
-	@EventHandler
-	public void onChat(AsyncPlayerChatEvent e) {
-		e.setMessage(format(e.getMessage()));
-	}
 
 	@EventHandler
 	public void onDeath(PlayerDeathEvent e) {
@@ -55,7 +49,9 @@ public class Main extends JavaPlugin implements Listener {
 		String msg = ChatColor.AQUA + p.getName() + ChatColor.GREEN + " has died at X"
 				+ ChatColor.AQUA + x + ChatColor.GREEN + " Y"
 				+ ChatColor.AQUA + y + ChatColor.GREEN + " Z"
-				+ ChatColor.AQUA + z + ChatColor.GREEN + ".";
+				+ ChatColor.AQUA + z + ChatColor.GREEN + "in "
+				+ ChatColor.AQUA + p.getLocation().getWorld()
+				+ ChatColor.GREEN + ".";
 		if (getConfig().getBoolean("send-all") == true) {
 			Bukkit.broadcastMessage(msg);
 		} else if (getConfig().getBoolean("send-all") == false) {
